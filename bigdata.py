@@ -6,7 +6,7 @@ import json
 spark = SparkSession.builder.appName("FlightDelayAnalysis").getOrCreate()
 
 #Pegar caminho do arquivo 
-filePath = '/home/joao/teste/flight_delays.csv' #MUDAR URL
+filePath = './flight_delays.csv' #MUDAR URL
 
 df = spark.read.csv(filePath, header=True, inferSchema=True)
 df.show(truncate=False)
@@ -28,5 +28,5 @@ df_top_delay_reasons.show()
 
 #dados_json = df_origens_mais_atrasadas.toPandas().to_dict(orient="records")
 #mudar url
-#with open("/home/joao/teste/dados_atrasos.json", "w") as f:
+#with open("./dados_atrasos.json", "w") as f:
 #    json.dump(dados_json, f, indent=4)
